@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Ayush Mohanty</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <div>
+          <h1 class="name">Ayush Mohanty</h1>
+          <p class="tagline">Research</p>
+        </div>
+
+        <div class="contact">
+          <div><a href="mailto:ayush.mohanty@gatech.edu">ayush.mohanty@gatech.edu</a></div>
+          <div>Atlanta, Georgia</div>
+          <div><a href="CV.pdf" target="_blank" rel="noopener">CV (PDF)</a></div>
+        </div>
+      </div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="service.html">Service</a>
+        <a href="talks.html">Talks</a>
+        </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>I. Federated Learning and Causal Reasoning</h2>
+    <div>
+        <p>
+          <strong>Why? :</strong> Industrial cyber-physical systems are becoming increasingly distributed across plants, subsystems,
+          institutions, and sensing environments. In these settings, data cannot always be pooled because of
+          privacy constraints, communication costs, ownership restrictions, or operational requirements.
+          At the same time, system-level behavior is shaped by interdependencies across clients, so purely local
+          models are often insufficient for understanding how faults propagate, how interventions should be designed,
+          or how decision-making should incorporate cross-system effects.
+        </p>
+
+        <p>
+          <strong>What? : </strong> My work in this area develops federated learning methods that move beyond prediction alone
+          toward causal reasoning in interconnected dynamical systems. I study problems such as federated Granger-causal
+          structure learning, uncertainty in causal discovery, decentralized counterfactual reasoning, and root cause
+          analysis when clients are heterogeneous and interact through latent or observed dependencies.
+      </p>
+               <img src="thrust1.png" alt="Research figure" class="figure-wide">
+            </div>
+    </div>
+   
+    <h2>II. Predictive Modeling in Dynamical Systems</h2>
+      <div>
+        <p>
+           <strong>Why? :</strong> Many engineered systems evolve over time through degradations that can interact among multiple subsystems. These systems rarely fail through a single isolated mechanism; instead, performance changes (degradation)
+          emerge gradually, often with partial observability, multiple failure modes, and feedback between components.
+          This makes prediction fundamentally difficult, especially when the objective is not only to forecast outcomes
+          but also to support maintenance, scheduling, and operational decision-making.
+        </p>
+
+        <p>
+          <strong>What? : </strong> In this line of work, I build predictive models for dynamical systems with an emphasis on diagnostics,
+          prognostics, and health monitoring. My research addresses multi-component degradation, latent failure structure,
+          task-dependent wear, and system-level prediction in applications such as robotic manipulators, aerospace systems, hydropower components,
+          and other cyber-physical environments where temporal structure and physical context both matter.
+        </p> 
+          <img src="thrust2.png" alt="Research figure" class="figure-wide">
+      </div>
+    </div>
+
+  <h2>III. Research Prototyping</h2>
+
+<p>
+  My Ph.D. research has been closely associated with NASA’s
+  <a href="https://www.nasa.gov/directorates/stmd/space-tech-research-grants/habitats-optimized-for-missions-of-exploration-home/" target="_blank">Habitats Optimized for Missions of Exploration (HOME)</a>
+  Space Technology Research Institute (STRI), a multi-university initiative focused on autonomous and resilient
+  habitat systems for deep-space missions. Within this collaboration, I have developed decentralized learning
+  and inference frameworks for monitoring, diagnostics, and decision-making in interconnected cyber-physical systems.
+</p>
+
+<p>
+  As part of this effort, I led the design and implementation of system-level prototypes that integrate
+  federated learning, causal reasoning, and predictive analytics across distributed subsystems.
+  These systems were deployed and demonstrated in live experimental testbeds in collaboration with NASA engineers
+  and aerospace industry stakeholders.
+</p>
+
+<ul>
+  <li>
+    <strong>Decentralized Root Cause Analysis (2024, CU Boulder):</strong>
+    Developed and demonstrated a system for identifying failure origins in interconnected subsystems using
+    federated causal inference, presented to NASA engineers and aerospace collaborators.
+  </li>
+
+  <li>
+    <strong>Decentralized Orchestration of Predictive Analytics (2023, CU Boulder):</strong>
+    Designed a distributed framework for coordinating predictive models across multiple subsystems,
+    enabling real-time monitoring and decision support in a smart habitat environment.
+  </li>
+</ul>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Ayush Mohanty
+    </div>
+  </footer>
+</body>
+</html>
