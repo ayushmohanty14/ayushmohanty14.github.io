@@ -72,6 +72,39 @@ a {
   text-decoration: none;
 }
 
+.contact-icons a[href*="mailto"] i {
+  color: #ea4335; /* Gmail red */
+}
+
+.contact-icons a[href*="linkedin"] i {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.contact-icons a[href*="scholar"] i {
+  color: #4285f4; /* Google blue */
+}
+
+.contact-icons a[href$="CV.pdf"] i {
+  color: #6b7280; /* neutral */
+}
+
+.contact-icons {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end; /* keeps it right-aligned */
+  gap: 18px; /* space between icons */
+}
+
+.contact-icons a i {
+  font-size: 24px; /* increase size */
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.contact-icons a:hover i {
+  transform: translateY(-2px); /* subtle lift */
+  opacity: 0.85;
+}
+
 a:hover,
 nav a:hover {
   text-decoration: underline;
@@ -256,6 +289,14 @@ li {
 
 .figure-wide {
   width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 0 0 0; /* top right bottom left */
+  border-radius: 1px;
+}
+.figure-wide2 {
+  width: 50%;
   max-width: 900px;
   height: auto;
   display: block;
