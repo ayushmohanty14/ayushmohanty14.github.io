@@ -9,47 +9,54 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <div class="topbar">
-  <div>
-    <h1 class="name">Ayush Mohanty</h1>
-    <p class="tagline">Teaching</p>
-  </div>
+  <div class="container">
+    <div class="topbar">
+      <div>
+        <h1 class="name">Ayush Mohanty</h1>
+        <p class="tagline">Teaching</p>
+      </div>
 
-  <div class="contact">
-    <div>Atlanta, Georgia</div>
+      <div class="contact">
+        <div>Atlanta, Georgia</div>
 
-    <div class="contact-icons">
-      <a href="mailto:ayush.mohanty@gatech.edu" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+        <div class="contact-icons">
+          <a href="mailto:ayush.mohanty@gatech.edu" title="Email" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
 
-      <a href="https://www.linkedin.com/in/ayushmohanty14/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
+          <a href="https://www.linkedin.com/in/ayushmohanty14/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
 
-      <a href="https://scholar.google.co.in/citations?user=hMblhyAAAAAJ&hl=en" target="_blank" title="Google Scholar">
-        <i class="fas fa-graduation-cap"></i>
-      </a>
+          <a href="https://scholar.google.co.in/citations?user=hMblhyAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+        </div>
+
+        <div class="cv-link">
+          <a href="CV.pdf">CV (PDF)</a>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <a href="CV.pdf">CV (PDF)</a>
-    </div>
-  </div>
-</div>
+    <div class="menu-wrap">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-
-        <nav>
+      <nav class="site-nav" id="siteMenu">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="teaching.html">Teaching</a>
         <a href="service.html">Service</a>
         <a href="talks.html">Talks</a>
-        </nav>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="container">
     <h2>Instructor</h2>
@@ -111,5 +118,28 @@
       © Ayush Mohanty
     </div>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const siteMenu = document.getElementById("siteMenu");
+
+  menuToggle.addEventListener("click", () => {
+    siteMenu.classList.toggle("open");
+    menuToggle.classList.toggle("active");
+
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!expanded));
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedToggle = menuToggle.contains(event.target);
+    const clickedMenu = siteMenu.contains(event.target);
+
+    if (!clickedToggle && !clickedMenu) {
+      siteMenu.classList.remove("open");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+</script>
 </body>
 </html>

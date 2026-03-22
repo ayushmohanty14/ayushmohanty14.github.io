@@ -8,48 +8,55 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="topbar">
-  <div>
-    <h1 class="name">Ayush Mohanty</h1>
-    <p class="tagline">Research</p>
-  </div>
+<header class="site-header">
+  <div class="container">
+    <div class="topbar">
+      <div>
+        <h1 class="name">Ayush Mohanty</h1>
+        <p class="tagline">Research</p>
+      </div>
 
-  <div class="contact">
-    <div>Atlanta, Georgia</div>
+      <div class="contact">
+        <div>Atlanta, Georgia</div>
 
-    <div class="contact-icons">
-      <a href="mailto:ayush.mohanty@gatech.edu" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+        <div class="contact-icons">
+          <a href="mailto:ayush.mohanty@gatech.edu" title="Email" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
 
-      <a href="https://www.linkedin.com/in/ayushmohanty14/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
+          <a href="https://www.linkedin.com/in/ayushmohanty14/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
 
-      <a href="https://scholar.google.co.in/citations?user=hMblhyAAAAAJ&hl=en" target="_blank" title="Google Scholar">
-        <i class="fas fa-graduation-cap"></i>
-      </a>
+          <a href="https://scholar.google.co.in/citations?user=hMblhyAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+        </div>
+
+        <div class="cv-link">
+          <a href="CV.pdf">CV (PDF)</a>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <a href="CV.pdf">CV (PDF)</a>
-    </div>
-  </div>
-</div>
+    <div class="menu-wrap">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-
-        <nav>
+      <nav class="site-nav" id="siteMenu">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="teaching.html">Teaching</a>
         <a href="service.html">Service</a>
         <a href="talks.html">Talks</a>
-        </nav>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="container">
     <h2>I. Federated Learning and Causal Reasoning</h2>
@@ -129,6 +136,20 @@
     with edge devices generating subsystem-level insights and communicating with a central vehicle system manager for real-time optimization.
   </li>
 </ul>
+
+    <h2>Past Experiences</h2>
+      <div>
+                      <img src="internships.png" alt="Research figure" class="figure-wide2">
+<p>
+Prior to and during my Ph.D., I have worked across academia, national laboratories, and industry on problems in machine learning, optimization, and cyber-physical systems. 
+
+Working as a PhD intern in Argonne National Laboratory, I developed predictive models for degradation and remaining useful life estimation in energy systems using real-time data. 
+I also held a visiting research position at the Warwick Manufacturing Group, where I worked on data-driven analysis of industrial X-ray CT data, and at the  
+University of Alberta, where I designed intelligent, Industry 4.0-aligned system prototypes for automated aquaponic industry. During my undergraduate internship at MathWorks India, I developed algorithmic solutions for UAV path planning.
+</p>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer">
@@ -136,5 +157,28 @@
       © Ayush Mohanty
     </div>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const siteMenu = document.getElementById("siteMenu");
+
+  menuToggle.addEventListener("click", () => {
+    siteMenu.classList.toggle("open");
+    menuToggle.classList.toggle("active");
+
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!expanded));
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedToggle = menuToggle.contains(event.target);
+    const clickedMenu = siteMenu.contains(event.target);
+
+    if (!clickedToggle && !clickedMenu) {
+      siteMenu.classList.remove("open");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+</script>
 </body>
 </html>

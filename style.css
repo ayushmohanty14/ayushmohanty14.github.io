@@ -56,7 +56,8 @@ body {
 .tagline {
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.25rem;   /* ↑ increase from 1rem */
+  font-weight: 300;     /* makes it more visible */
 }
 
 .contact {
@@ -73,35 +74,35 @@ a {
 }
 
 .contact-icons a[href*="mailto"] i {
-  color: #ea4335; /* Gmail red */
+  color: #ea4335;
 }
 
 .contact-icons a[href*="linkedin"] i {
-  color: #0077b5; /* LinkedIn blue */
+  color: #0077b5;
 }
 
 .contact-icons a[href*="scholar"] i {
-  color: #4285f4; /* Google blue */
+  color: #4285f4;
 }
 
 .contact-icons a[href$="CV.pdf"] i {
-  color: #6b7280; /* neutral */
+  color: #6b7280;
 }
 
 .contact-icons {
   margin-top: 8px;
   display: flex;
-  justify-content: flex-end; /* keeps it right-aligned */
-  gap: 18px; /* space between icons */
+  justify-content: flex-end;
+  gap: 18px;
 }
 
 .contact-icons a i {
-  font-size: 24px; /* increase size */
+  font-size: 24px;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .contact-icons a:hover i {
-  transform: translateY(-2px); /* subtle lift */
+  transform: translateY(-2px);
   opacity: 0.85;
 }
 
@@ -292,22 +293,154 @@ li {
   max-width: 900px;
   height: auto;
   display: block;
-  margin: 0 0 0 0; /* top right bottom left */
+  margin: 0 0 0 0;
   border-radius: 1px;
 }
+
 .figure-wide2 {
-  width: 50%;
+  width: 75%;
   max-width: 900px;
   height: auto;
   display: block;
-  margin: 0 0 0 0; /* top right bottom left */
+  margin: 0 0 0 0;
   border-radius: 1px;
 }
+
 .footer {
   border-top: 1px solid var(--line);
   padding: 22px 0 38px;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+/* =========================
+   NEW / MODIFIED STYLES
+   ========================= */
+
+/* biography label */
+.bio-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* keep CV link slightly separated from icons */
+.cv-link {
+  margin-top: 8px;
+}
+
+/* news badge when used inline */
+.inline-badge {
+  margin-left: 8px;
+}
+
+/* education stacked list */
+.stack-list {
+  display: grid;
+  gap: 12px;
+}
+
+.stack-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: white;
+}
+
+/* cleaner bullet sections */
+.clean-list {
+  padding-left: 22px;
+}
+
+/* hamburger menu wrapper */
+.menu-wrap {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+/* button with three horizontal lines */
+.menu-toggle {
+  width: 46px;
+  height: 40px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 9px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #111827;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* animate into X */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* dropdown nav */
+.site-nav {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  min-width: 210px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 100;
+  margin-top: 0;
+}
+
+.site-nav.open {
+  display: flex;
+}
+
+.site-nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.site-nav a:hover {
+  background: #eff6ff;
+  text-decoration: none;
+}
+
+/* optional if you want better spacing for hero text column */
+.hero-text-col {
+  min-width: 0;
 }
 
 @media (max-width: 760px) {
@@ -321,6 +454,10 @@ li {
     text-align: left;
   }
 
+  .contact-icons {
+    justify-content: flex-start;
+  }
+
   .name {
     font-size: 1.9rem;
   }
@@ -328,4 +465,23 @@ li {
   .profile-photo {
     max-width: 220px;
   }
+
+  .menu-wrap {
+    justify-content: flex-start;
+  }
+
+  .site-nav {
+    left: 0;
+    right: auto;
+  }
+
+.edu-simple p {
+  margin: 12px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.edu-simple p:last-child {
+  border-bottom: none;
+}
 }
