@@ -56,8 +56,8 @@ body {
 .tagline {
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 1.25rem;   /* ↑ increase from 1rem */
-  font-weight: 300;     /* makes it more visible */
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .contact {
@@ -85,10 +85,6 @@ a {
   color: #4285f4;
 }
 
-.contact-icons a[href$="CV.pdf"] i {
-  color: #6b7280;
-}
-
 .contact-icons {
   margin-top: 8px;
   display: flex;
@@ -111,6 +107,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* default nav styling */
 nav {
   margin-top: 18px;
   display: flex;
@@ -317,7 +314,6 @@ li {
    NEW / MODIFIED STYLES
    ========================= */
 
-/* biography label */
 .bio-label {
   display: inline-block;
   margin-bottom: 10px;
@@ -330,17 +326,14 @@ li {
   text-transform: uppercase;
 }
 
-/* keep CV link slightly separated from icons */
 .cv-link {
   margin-top: 8px;
 }
 
-/* news badge when used inline */
 .inline-badge {
   margin-left: 8px;
 }
 
-/* education stacked list */
 .stack-list {
   display: grid;
   gap: 12px;
@@ -353,21 +346,29 @@ li {
   background: white;
 }
 
-/* cleaner bullet sections */
 .clean-list {
   padding-left: 22px;
 }
 
-/* hamburger menu wrapper */
+.edu-simple p {
+  margin: 12px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.edu-simple p:last-child {
+  border-bottom: none;
+}
+
+/* menu wrapper */
 .menu-wrap {
   margin-top: 18px;
-  display: flex;
-  justify-content: flex-end;
   position: relative;
 }
 
-/* button with three horizontal lines */
+/* Desktop: show nav links, hide hamburger */
 .menu-toggle {
+  display: none;
   width: 46px;
   height: 40px;
   border: 1px solid var(--line);
@@ -375,7 +376,6 @@ li {
   border-radius: 8px;
   cursor: pointer;
   padding: 8px 9px;
-  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -390,7 +390,6 @@ li {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* animate into X */
 .menu-toggle.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -403,42 +402,19 @@ li {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* dropdown nav */
+/* Desktop nav */
 .site-nav {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  min-width: 210px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  padding: 10px;
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 100;
-  margin-top: 0;
-}
-
-.site-nav.open {
   display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .site-nav a {
-  display: block;
-  padding: 8px 10px;
-  border-radius: 6px;
-  color: #111827;
   font-weight: 600;
 }
 
-.site-nav a:hover {
-  background: #eff6ff;
-  text-decoration: none;
-}
-
-/* optional if you want better spacing for hero text column */
+/* optional */
 .hero-text-col {
   min-width: 0;
 }
@@ -467,21 +443,52 @@ li {
   }
 
   .menu-wrap {
+    display: flex;
     justify-content: flex-start;
   }
 
-  .site-nav {
-    left: 0;
-    right: auto;
+  /* Mobile: show hamburger */
+  .menu-toggle {
+    display: inline-flex;
   }
 
-.edu-simple p {
-  margin: 12px 0 18px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
-}
+  /* Mobile: hide nav until opened */
+  .site-nav {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: auto;
+    min-width: 210px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+    margin-top: 0;
+  }
 
-.edu-simple p:last-child {
-  border-bottom: none;
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .site-nav a:hover {
+    background: #eff6ff;
+    text-decoration: none;
+  }
+
+  .email-line {
+  margin-top: 6px;
 }
 }
