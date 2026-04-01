@@ -4,152 +4,268 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | Ayush Mohanty</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .research-page {
+      padding-top: 22px;
+    }
+
+    .research-accordion {
+      margin-top: 8px;
+    }
+
+    .accordion-item {
+      margin-bottom: 18px;
+      border: 1px solid #d7e4f8;
+      border-radius: 14px;
+      background: #ffffff;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: linear-gradient(180deg, #eef5ff 0%, #e7f0ff 100%);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      margin: 0;
+      text-align: left;
+      font-family: "Fira Sans", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #12305f;
+      line-height: 1.2;
+      -webkit-appearance: none;
+      appearance: none;
+      box-shadow: none;
+    }
+
+    .accordion-header:hover {
+      background: linear-gradient(180deg, #e8f1ff 0%, #ddeaff 100%);
+    }
+
+    .accordion-title {
+      flex: 1;
+      padding-right: 16px;
+    }
+
+    .accordion-icon {
+      font-size: 1.7rem;
+      font-weight: 500;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.22s ease;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      padding: 0 20px;
+    }
+
+    .accordion-item.active .accordion-content {
+      padding: 18px 20px 20px;
+    }
+
+    .accordion-content p:first-child,
+    .accordion-content img:first-child,
+    .accordion-content ul:first-child {
+      margin-top: 0;
+    }
+
+    .accordion-content p:last-child,
+    .accordion-content ul:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 760px) {
+      .research-page {
+        padding-top: 18px;
+      }
+
+      .accordion-header {
+        font-size: 1.2rem;
+        padding: 16px;
+      }
+
+      .accordion-content {
+        padding: 0 16px;
+      }
+
+      .accordion-item.active .accordion-content {
+        padding: 16px;
+      }
+
+      .accordion-icon {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <div class="topbar">
-      <div>
-        <h1 class="name">Ayush Mohanty</h1>
-        <p class="tagline">Research</p>
-      </div>
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <a href="index.html" class="top-strip-name">Ayush Mohanty</a>
 
-      <div class="contact">
-        <div>Atlanta, Georgia</div>
-
-        <div class="contact-icons">
-          <a href="mailto:ayush.mohanty@gatech.edu" title="Email" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-
-          <a href="https://www.linkedin.com/in/ayushmohanty14/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-
-          <a href="https://scholar.google.co.in/citations?user=hMblhyAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
-            <i class="fas fa-graduation-cap"></i>
-          </a>
-        </div>
-
-        <div class="cv-link">
-          <a href="CV.pdf">CV (PDF)</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-wrap">
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav" id="siteMenu">
+      <nav class="site-nav">
         <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
+        <a href="research.html" class="active">Research</a>
         <a href="publications.html">Publications</a>
         <a href="teaching.html">Teaching</a>
         <a href="service.html">Service</a>
         <a href="talks.html">Talks</a>
+        <a href="contact.html">Contact</a>
+        <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
       </nav>
     </div>
   </div>
-</header>
 
-  <main class="container">
-    <h2>I. Federated Learning and Causal Reasoning</h2>
-    <div>
-                     <img src="thrust1.png" alt="Research figure" class="figure-wide">
-        <p>
-          <strong>Why? :</strong> Industrial cyber-physical systems are becoming increasingly distributed across plants, subsystems,
-          institutions, and sensing environments. In these settings, data cannot always be pooled because of
-          privacy constraints, communication costs, ownership restrictions, or operational requirements.
-          At the same time, system-level behavior is shaped by interdependencies across clients, so purely local
-          models are often insufficient for understanding how faults propagate, how interventions should be designed,
-          or how decision-making should incorporate cross-system effects.
-        </p>
+  <main class="container research-page">
+    <div class="research-accordion">
 
-        <p>
-          <strong>What? : </strong> My work in this area develops federated learning methods that move beyond prediction alone
-          toward causal reasoning in interconnected dynamical systems. I study problems such as federated Granger-causal
-          structure learning, uncertainty in causal discovery, decentralized counterfactual reasoning, and root cause
-          analysis when clients are heterogeneous and interact through latent interdependencies.
-      </p>
-            </div>
-    </div>
-   
-    <h2>II. Predictive Modeling in Dynamical Systems</h2>
-      <div>
-                      <img src="thrust2.png" alt="Research figure" class="figure-wide">
-        <p>
-           <strong>Why? :</strong> Many engineered systems evolve over time through degradations that can interact among multiple subsystems. These systems rarely fail through a single isolated mechanism; instead, performance changes (degradation)
-          emerge gradually, often with partial observability, multiple failure modes, and feedback between components.
-          This makes prediction fundamentally difficult, especially when the objective is not only to forecast outcomes
-          but also to support operational decision-making.
-        </p>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span class="accordion-title">I. Federated Learning and Causal Reasoning</span>
+          <span class="accordion-icon">+</span>
+        </button>
 
-        <p>
-          <strong>What? : </strong> In this line of work, I build predictive models for dynamical systems with an emphasis on diagnostics,
-          prognostics, and health monitoring. My research addresses multi-component degradation, latent failure structure,
-          task-dependent wear, and system-level prediction in applications such as robotic manipulators, aerospace systems, hydropower components,
-          and other cyber-physical environments where temporal structure and physical context both matter.
-        </p> 
+        <div class="accordion-content">
+          <img src="thrust1.png" alt="Research figure" class="figure-wide">
+
+          <p>
+            <strong>Why? :</strong> Industrial cyber-physical systems are becoming increasingly distributed across plants, subsystems,
+            institutions, and sensing environments. In these settings, data cannot always be pooled because of
+            privacy constraints, communication costs, ownership restrictions, or operational requirements.
+            At the same time, system-level behavior is shaped by interdependencies across clients, so purely local
+            models are often insufficient for understanding how faults propagate, how interventions should be designed,
+            or how decision-making should incorporate cross-system effects.
+          </p>
+
+          <p>
+            <strong>What? :</strong> My work in this area develops federated learning methods that move beyond prediction alone
+            toward causal reasoning in interconnected dynamical systems. I study problems such as federated Granger-causal
+            structure learning, uncertainty in causal discovery, decentralized counterfactual reasoning, and root cause
+            analysis when clients are heterogeneous and interact through latent interdependencies.
+          </p>
+        </div>
       </div>
-    </div>
 
-  <h2>III. Research Prototyping</h2>
-<img src="HOME.png" alt="Research figure" class="figure-wide">
-<p>
-  My Ph.D. research has been closely associated with NASA’s
-  <a href="https://www.nasa.gov/directorates/stmd/space-tech-research-grants/habitats-optimized-for-missions-of-exploration-home/" target="_blank">Habitats Optimized for Missions of Exploration (HOME)</a>
-  Space Technology Research Institute (STRI), a multi-university initiative focused on autonomous and resilient
-  habitat systems for deep-space missions. Within this collaboration, I have developed decentralized learning
-  and inference frameworks for monitoring, diagnostics, and decision-making in interconnected cyber-physical systems.
-</p>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span class="accordion-title">II. Predictive Modeling in Dynamical Systems</span>
+          <span class="accordion-icon">+</span>
+        </button>
 
-<p>
-  As part of this effort, I led the design and implementation of system-level prototypes that integrate
-  federated learning, causal reasoning, and predictive analytics across distributed subsystems.
-  These systems were deployed and demonstrated in live experimental testbeds in collaboration with NASA engineers
-  and aerospace industry stakeholders.
-</p>
+        <div class="accordion-content">
+          <img src="thrust2.png" alt="Research figure" class="figure-wide">
 
-<ul>
-  <li>
-    <strong>Decentralized Root Cause Analysis (2024):</strong>
-    Developed and demonstrated a system for identifying failure origins in interconnected subsystems using
-    federated causal inference, presented to NASA engineers and aerospace collaborators.
-    Demonstrated on the 
-    <a href="https://www.colorado.edu/bioastronautics/2022/03/23/habitats-optimized-missions-exploration-home" target="_blank">HOME spacecraft mockup</a> and 
-    <a href="https://www.colorado.edu/bioastronautics/2022/03/16/aethersteve" target="_blank">STEVE testbed</a>,
-    showcasing real-time tracing of cascading faults and autonomous root subsystem identification.
-  </li>
+          <p>
+            <strong>Why? :</strong> Many engineered systems evolve over time through degradations that can interact among multiple subsystems.
+            These systems rarely fail through a single isolated mechanism; instead, performance changes emerge gradually,
+            often with partial observability, multiple failure modes, and feedback between components. This makes prediction
+            fundamentally difficult, especially when the objective is not only to forecast outcomes but also to support
+            operational decision-making.
+          </p>
 
-  <li>
-    <strong>Decentralized Orchestration of Predictive Analytics (2023):</strong>
-    Designed a distributed framework for coordinating predictive models across multiple subsystems,
-    enabling real-time monitoring and decision support in a smart habitat environment.
-    Deployed Docker-based analytics pipelines using 
-    <a href="https://gustavo.readthedocs.io/en/latest/" target="_blank">Gustavo</a>,
-    with edge devices generating subsystem-level insights and communicating with a central vehicle system manager for real-time optimization.
-  </li>
-</ul>
-
-    <h2>Past Experiences</h2>
-      <div>
-                      <img src="internships.png" alt="Research figure" class="figure-wide2">
-<p>
-Prior to and during my Ph.D., I have worked across academia, national laboratories, and industry on problems in machine learning, optimization, and cyber-physical systems. 
-
-Working as a PhD intern in <em>Argonne National Laboratory</em>, I developed predictive models for degradation and remaining useful life estimation in energy systems using real-time data. 
-I also held a visiting research position at the <em></em>Warwick Manufacturing Group</em>, where I worked on data-driven analysis of industrial X-ray CT data, and at the  
-<em>University of Alberta</em>, where I designed intelligent, Industry 4.0-aligned system prototypes for automated aquaponic industry. During my undergraduate internship at <em>MathWorks</em> India, I developed algorithmic solutions for UAV path planning.
-These experiences collectively shaped my current research focus on data-driven decision-making in complex, interconnected engineering systems.
+          <p>
+            <strong>What? :</strong> In this line of work, I build predictive models for dynamical systems with an emphasis on diagnostics,
+            prognostics, and health monitoring. My research addresses multi-component degradation, latent failure structure,
+            task-dependent wear, and system-level prediction in applications such as robotic manipulators, aerospace systems,
+            hydropower components, and other cyber-physical environments where temporal structure and physical context both matter.
+          </p>
+        </div>
       </div>
-    </div>
 
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span class="accordion-title">III. Research Prototyping</span>
+          <span class="accordion-icon">+</span>
+        </button>
+
+        <div class="accordion-content">
+          <img src="HOME.png" alt="Research figure" class="figure-wide">
+
+          <p>
+            My Ph.D. research has been closely associated with NASA’s
+            <a href="https://www.nasa.gov/directorates/stmd/space-tech-research-grants/habitats-optimized-for-missions-of-exploration-home/" target="_blank" rel="noopener noreferrer">Habitats Optimized for Missions of Exploration (HOME)</a>
+            Space Technology Research Institute (STRI), a multi-university initiative focused on autonomous and resilient
+            habitat systems for deep-space missions. Within this collaboration, I have developed decentralized learning
+            and inference frameworks for monitoring, diagnostics, and decision-making in interconnected cyber-physical systems.
+          </p>
+
+          <p>
+            As part of this effort, I led the design and implementation of system-level prototypes that integrate federated
+            learning, causal reasoning, and predictive analytics across distributed subsystems. These systems were deployed
+            and demonstrated in live experimental testbeds in collaboration with NASA engineers and aerospace industry stakeholders.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Decentralized Root Cause Analysis (2024):</strong>
+              Developed and demonstrated a system for identifying failure origins in interconnected subsystems using federated
+              causal inference, presented to NASA engineers and aerospace collaborators. Demonstrated on the
+              <a href="https://www.colorado.edu/bioastronautics/2022/03/23/habitats-optimized-missions-exploration-home" target="_blank" rel="noopener noreferrer">HOME spacecraft mockup</a>
+              and
+              <a href="https://www.colorado.edu/bioastronautics/2022/03/16/aethersteve" target="_blank" rel="noopener noreferrer">STEVE testbed</a>,
+              showcasing real-time tracing of cascading faults and autonomous root subsystem identification.
+            </li>
+
+            <li>
+              <strong>Decentralized Orchestration of Predictive Analytics (2023):</strong>
+              Designed a distributed framework for coordinating predictive models across multiple subsystems, enabling real-time
+              monitoring and decision support in a smart habitat environment. Deployed Docker-based analytics pipelines using
+              <a href="https://gustavo.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Gustavo</a>,
+              with edge devices generating subsystem-level insights and communicating with a central vehicle system manager
+              for real-time optimization.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span class="accordion-title">Past Experiences</span>
+          <span class="accordion-icon">+</span>
+        </button>
+
+        <div class="accordion-content">
+          <img src="internships.png" alt="Research figure" class="figure-wide2">
+
+          <p>
+            Prior to and during my Ph.D., I have worked across academia, national laboratories, and industry on problems
+            in machine learning, optimization, and cyber-physical systems.
+          </p>
+
+          <p>
+            Working as a PhD intern in <em>Argonne National Laboratory</em>, I developed predictive models for degradation and
+            remaining useful life estimation in energy systems using real-time data. I also held a visiting research position
+            at the <em>Warwick Manufacturing Group</em>, where I worked on data-driven analysis of industrial X-ray CT data, and
+            at the <em>University of Alberta</em>, where I designed intelligent, Industry 4.0-aligned system prototypes for automated
+            aquaponic industry. During my undergraduate internship at <em>MathWorks</em> India, I developed algorithmic solutions
+            for UAV path planning. These experiences collectively shaped my current research focus on data-driven decision-making
+            in complex, interconnected engineering systems.
+          </p>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <footer class="footer">
@@ -157,28 +273,29 @@ These experiences collectively shaped my current research focus on data-driven d
       © Ayush Mohanty
     </div>
   </footer>
+
   <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const siteMenu = document.getElementById("siteMenu");
+    document.querySelectorAll(".accordion-header").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        const content = item.querySelector(".accordion-content");
 
-  menuToggle.addEventListener("click", () => {
-    siteMenu.classList.toggle("open");
-    menuToggle.classList.toggle("active");
+        document.querySelectorAll(".accordion-item").forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove("active");
+            otherItem.querySelector(".accordion-content").style.maxHeight = "0px";
+          }
+        });
 
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!expanded));
-  });
+        item.classList.toggle("active");
 
-  document.addEventListener("click", (event) => {
-    const clickedToggle = menuToggle.contains(event.target);
-    const clickedMenu = siteMenu.contains(event.target);
-
-    if (!clickedToggle && !clickedMenu) {
-      siteMenu.classList.remove("open");
-      menuToggle.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-</script>
+        if (item.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = "0px";
+        }
+      });
+    });
+  </script>
 </body>
 </html>

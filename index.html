@@ -5,23 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ayush Mohanty</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="topbar">
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <a href="index.html" class="top-strip-name">Ayush Mohanty</a>
+
+      <nav class="site-nav" id="siteMenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="service.html">Service</a>
+        <a href="talks.html">Talks</a>
+        <a href="contact.html">Contact</a>
+        <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <p class="note-box">
+        <span class="new-badge">NEW</span>
+        Currently on the academic job market for the <strong>2026–2027</strong> cycle.
+      </p>
+
+      <div class="hero-grid">
         <div>
-          <h1 class="name">Ayush Mohanty</h1>
-          <p class="tagline">Ph.D. Candidate in Machine Learning, Georgia Institute of Technology</p>
-        </div>
+          <img src="ayush.jpg" alt="Portrait of Ayush Mohanty" class="profile-photo" />
 
-        <div class="contact">
-          <div>Atlanta, Georgia</div>
-
-          <div class="contact-icons">
+          <div class="profile-links">
             <a href="mailto:ayush.mohanty@gatech.edu" title="Email" aria-label="Email">
               <i class="fas fa-envelope"></i>
             </a>
@@ -34,42 +55,6 @@
               <i class="fas fa-graduation-cap"></i>
             </a>
           </div>
-
-          <div class="cv-link">
-            <a href="CV.pdf">CV (PDF)</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-wrap">
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="site-nav" id="siteMenu">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="publications.html">Publications</a>
-          <a href="teaching.html">Teaching</a>
-          <a href="service.html">Service</a>
-          <a href="talks.html">Talks</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <p class="note-box">
-        <span class="new-badge">NEW</span>
-        Currently on the academic job market for the <strong>2026–2027</strong> cycle.
-      </p>
-
-      <div class="hero-grid">
-        <div>
-          <img src="ayush.jpg" alt="Portrait of Ayush Mohanty" class="profile-photo" />
         </div>
 
         <div class="hero-text-col">
@@ -77,10 +62,10 @@
 
           <p>
             I am a Ph.D. candidate in Machine Learning at the H. Milton Stewart School of Industrial and Systems Engineering
-            at the Georgia Institute of Technology, advised by <strong>Prof. Nagi Gebraeel</strong>.
-            My research focuses on <strong><em>decentralized learning and causal reasoning</em></strong> in interconnected cyber-physical systems.
-            Specifically, I develop theoretical, and algorithmic foundations for causal learning and inference in distributed and heterogeneous industrial settings.
-            My work emphasizes <em>causal discovery</em>, <em>uncertainty quantification</em>, <em>counterfactual reasoning</em>, and <em>root cause analysis</em> under anomalous operations.
+            at the Georgia Institute of Technology, advised by Prof. Nagi Gebraeel.
+            My research focuses on <strong>decentralized learning and causal reasoning</strong> in interconnected cyber-physical systems.
+            Specifically, I develop theoretical and algorithmic foundations for causal learning and inference in distributed and heterogeneous industrial settings.
+            My work emphasizes <em>causal discovery</em>, <em>uncertainty quantification</em>, <em>counterfactual reasoning</em>, and <em>root cause analysis</em> under anomaly.
           </p>
 
           <p>
@@ -91,12 +76,12 @@
           </p>
 
           <p>
-  You can reach me at 
-  <a href="mailto:ayush.mohanty@gatech.edu">ayush.mohanty@gatech.edu</a>.
-</p>
+            You can reach me at
+            <a href="mailto:ayush.mohanty@gatech.edu">ayush.mohanty@gatech.edu</a>.
+          </p>
 
           <div class="button-row">
-            <a class="button" href="CV.pdf">Download CV</a>
+            <a class="button primary" href="CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
           </div>
         </div>
       </div>
@@ -127,52 +112,52 @@
       </ul>
     </section>
 
-<section>
-  <h2>Selected Honors &amp; Awards</h2>
+    <section>
+      <h2>Selected Honors &amp; Awards</h2>
 
-  <div class="stack-list">
-    <div class="stack-item">
-      <div class="item-title">Travel Award Grant</div>
-      <div class="meta">ASA Quality and Productivity Research Conference — 2025</div>
-    </div>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="item-title">Travel Award Grant</div>
+          <div class="meta">ASA Quality and Productivity Research Conference — 2025</div>
+        </div>
 
-    <div class="stack-item">
-      <div class="item-title">Novelis Graduate Scholarship</div>
-      <div class="meta">Ph.D. research excellence — 2024–2025</div>
-    </div>
+        <div class="stack-item">
+          <div class="item-title">Novelis Graduate Scholarship</div>
+          <div class="meta">Ph.D. research excellence — 2024–2025</div>
+        </div>
 
-    <div class="stack-item">
-      <div class="item-title">Silver Medal</div>
-      <div class="meta">Department Rank 1, IIT Kharagpur — 2020</div>
-    </div>
-  </div>
-</section>
+        <div class="stack-item">
+          <div class="item-title">Silver Medal</div>
+          <div class="meta">Department Rank 1, IIT Kharagpur — 2020</div>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>Education</h2>
+    <section>
+      <h2>Education</h2>
 
-  <div class="edu-simple">
-    <p>
-      Ph.D. in Machine Learning<br>
-      <em>Georgia Institute of Technology</em>, 2020–2026
-    </p>
+      <div class="edu-simple">
+        <p>
+          Ph.D. in Machine Learning<br>
+          <em>Georgia Institute of Technology</em>, 2020–2026
+        </p>
 
-    <p>
-      M.S. in Computer Science<br>
-      <em>Georgia Institute of Technology</em>, 2024–2025
-    </p>
+        <p>
+          M.S. in Computer Science<br>
+          <em>Georgia Institute of Technology</em>, 2024–2025
+        </p>
 
-    <p>
-      M.S. in Industrial Engineering &amp; Management<br>
-      <em>Indian Institute of Technology (IIT) Kharagpur</em>, 2019–2020
-    </p>
+        <p>
+          M.S. in Industrial Engineering &amp; Management<br>
+          <em>Indian Institute of Technology (IIT) Kharagpur</em>, 2019–2020
+        </p>
 
-    <p>
-      B.S. in Manufacturing Science &amp; Engineering<br>
-      <em>Indian Institute of Technology (IIT) Kharagpur</em>, 2015–2019
-    </p>
-  </div>
-</section>
+        <p>
+          B.S. in Manufacturing Science &amp; Engineering<br>
+          <em>Indian Institute of Technology (IIT) Kharagpur</em>, 2015–2019
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -180,29 +165,5 @@
       © Ayush Mohanty
     </div>
   </footer>
-
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const siteMenu = document.getElementById("siteMenu");
-
-    menuToggle.addEventListener("click", () => {
-      siteMenu.classList.toggle("open");
-      menuToggle.classList.toggle("active");
-
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!expanded));
-    });
-
-    document.addEventListener("click", (event) => {
-      const clickedToggle = menuToggle.contains(event.target);
-      const clickedMenu = siteMenu.contains(event.target);
-
-      if (!clickedToggle && !clickedMenu) {
-        siteMenu.classList.remove("open");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  </script>
 </body>
 </html>
