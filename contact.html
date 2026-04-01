@@ -23,8 +23,15 @@
   <div class="top-strip">
     <div class="top-strip-inner">
       <a href="index.html" class="top-strip-name">Ayush Mohanty</a>
-
-      <nav class="site-nav">
+<button class="menu-toggle" id="menuToggle"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="siteMenu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+      <nav class="site-nav" id="siteMenu">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
@@ -89,6 +96,30 @@
       © Ayush Mohanty
     </div>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const siteMenu = document.getElementById("siteMenu");
 
+  if (menuToggle && siteMenu) {
+    menuToggle.addEventListener("click", () => {
+      siteMenu.classList.toggle("open");
+      menuToggle.classList.toggle("active");
+
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!expanded));
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedToggle = menuToggle.contains(event.target);
+      const clickedMenu = siteMenu.contains(event.target);
+
+      if (!clickedToggle && !clickedMenu) {
+        siteMenu.classList.remove("open");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+</script>
 </body>
 </html>
